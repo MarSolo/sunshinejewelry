@@ -1,54 +1,46 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.all
+    @posts = post.all
   end
 
   def show
   end
 
   def new
-    @post = current_user.posts.build
+    @post = post.new
   end
 
   def edit
   end
 
   def create
-    @post = current_user.posts.build(post_params)
-      if @post.save
-        redirect_to @post, notice: 'Post was successfully created.'
-      else
-        render action: 'new'
-      end
+    @post = post.new(post_params)
+    if @post.save
+      redirect_to @post, notice: 'post was successfully created.'
+    else
+      render action: 'new'
+    end
   end
 
   def update
-      if @post.update(post_params)
-        redirect_to @post, notice: 'Post was successfully updated.'
-      else
-        render action: 'edit'
+    if @post.update(post_params)
+      redirect_to @post, notice: 'post was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
   def destroy
-    @post.destroy 
+    @post.destroy
     redirect_to posts_url
-    end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
-    end
-
-     def correct_user
-      @post = current_user.posts.find_by(id: params[:id])
-      redirect_to posts_path, notice: "Not authorized to edit this post" if @post.nil?
+      @post = post.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
