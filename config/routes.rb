@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :installs
   get "users/shows"
   devise_for :users
   resources :posts
