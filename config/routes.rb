@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :installs
-  get "users/shows"
+  
+  get "users/show"
   devise_for :users
   resources :posts
 
+  #devise_for :installs
   root 'posts#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

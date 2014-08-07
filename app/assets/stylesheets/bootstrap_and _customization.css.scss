@@ -1,0 +1,141 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+$body-bg:                    #ecf0f1; 
+$font-family-sans-serif:     'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$navbar-height:              45px;
+$navbar-default-bg:          #6a0a3f;
+$navbar-default-brand-color: white;
+$navbar-default-link-color:  white;
+$brand-primary:              #6a0a3f;
+$jumbotron-bg:               white;
+
+@import 'bootstrap';
+
+body {
+	// background: url('/images/photo.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover; 
+	font-size: 14px;
+}
+
+h1 {
+	font-size: 20px;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+h3 {
+	font-size: 16px;
+}
+
+
+h4 {
+	font-size: 12px;
+	text-align: center;
+	color: white;
+}
+
+h5 {
+	font-size: 12px;
+}
+
+.container {
+	// background: url('/images/photo.jpg') no-repeat center center fixed;
+	width: 90%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover; 
+
+	-webkit-border-radius: 10px;
+  	-moz-border-radius: 10px;
+  	-ms-border-radius: 10px;
+  	border-radius: 10px;
+}
+
+ul, li {
+    list-style-type: none;
+    margin: 0 auto;
+}
+
+.carousel {
+	margin: 0 auto;
+	background: #ecf0f1;
+
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.carousel h1{
+	font-size: 25px;
+}
+
+.jumbotron {
+	margin: 0 auto;
+
+	// background: url('/images/photo1.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.jumbotron p {
+	color: black;
+	font-size: 16px;
+	text-align: center;
+}
+
+.jumbotron li {
+	margin: 0 auto;
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+}
+
+.jumbotron a {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.navbar {
+	margin: 0 auto;
+	border: none;
+	background: #6a0a3f;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: white;
+}
+
+.navbar li {
+	margin: 0 auto;
+	font-weight: bold;
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+.dropdown-menu {
+	-moz-box-shadow:10px 5px 15px rgba(0,0,0,.5); 
+	-webkit-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+	box-shadow: 1px 3px 15px rgba(0,0,0,.5); /*10px is horizontal offset, 5px is vertical offset, 15px is blur radius and rgba(0,0,0,.5) is shadow color*/
+	margin-bottom: 30px;
+}
+
+.dropdown-menu li {
+	margin: 10px;
+}
+
+.checkbox {
+	padding-left: 40px;
+}

@@ -1,25 +1,134 @@
-<h1>Listing posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.description %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <br>
+<div class="container">
+  <div id="carousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
 
-<%= link_to 'New Post', new_post_path %>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+
+    <div class="item active">
+      <p align="center">
+        <img src="images/Flower-Earring-1000x320.jpg" alt="carousel">
+      </p>
+    </div>
+
+    <div class="item">
+      <p align="center">
+        <img src="images/Tricolor-Fancy-Necklace-1000x320.jpg" alt="carousel">
+      </p>
+    </div>
+
+    <div class="item">
+      <p align="center">
+        <img src="images/Buterflies-Ring-1000x320.jpg" alt="carousel">
+      </p>
+    </div>
+
+    <div class="item">
+      <p align="center">
+        <img src="images/Twist-Earrings1-1000x320.jpg" alt="carousel">
+      </p>
+    </div>
+
+    <div class="item">
+      <p align="center">
+        <img src="images/gift-bag-2-1000x320.jpg" alt="carousel">
+      </p>
+    </div>
+
+    <div class="item">
+      <p align="center">
+        <img src="images/leaf-earring-one-1000x320.jpg" alt="carousel">
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+                          
+  <div class="row">
+    <div class="col-md-8">
+
+          <div id="posts" class="transitions-enabled">
+            <% @posts.each do |post| %>
+              <div class="box panel panel-default">
+                <%= link_to image_tag(post.image.url(:medium)), post %>
+                <div class="panel-body">
+                    <%= link_to post do %><h2><%= post.title %></h2><% end %>
+                    <h5>Posted by <strong><%= post.admin.name if post.admin %></strong> on 
+                    <%= post.created_at.strftime("%b %d, %Y") %></h5>
+                    <div class="actions">
+                        
+                        <%= simple_format post.text %>
+                        <% if current_admin && post.admin == current_admin %>
+                        <%= link_to edit_post_path(post) do %>
+                            Edit
+                        <% end %>
+                        <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                            Delete
+                        <% end %>
+
+                    <% end %>
+
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+    </div>
+
+    <div class="col-md-4">
+
+      <div id="posts" class="transitions-enabled">
+        <div class="box panel panel-default">
+          <div class="panel-body">
+              <li>Philadelphia local jewelry store located next to the Italian Market.</li>
+                <br>
+              <li><strong>Address:</strong></li> 
+              <li>702 Washington Avenue</li>
+              <li>Philadelphia, PA 19147</li>
+                <br>
+              <li><strong>Phone Number:</strong></li> 
+              <li>215-271-2950</li>
+                <br>
+              <li><strong>Hours:</strong></li>
+              <li>10am – 7pm</li>
+              <li>Closed on Tuesday</li>
+              <h3 align="center">“MAKING EVERY MOMENT ONE OF A KIND”</h3>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      
+        <div class="fb-like-box" data-href="http://www.facebook.com/pages/Sunshine-Jewelry/121478197895379" width="290px" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+
+    </div>
+    
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="center">
+       <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
+      </div>
+    </div>
+  </div>
+
+</div>
