@@ -43,15 +43,15 @@
       </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <% if admin_signed_in? %>
+          <% if user_signed_in? %>
             <li>
               <%= link_to new_post_path do %>
                 <span class="glyphicon glyphicon-plus"></span>New Post<% end %>
             </li>
-                <li><%= link_to "Account", edit_admin_registration_path %></li>
-                <li><%= link_to "Log Out", destroy_admin_session_path, method: :delete %></li>
+                <li><%= link_to "Account", edit_user_registration_path %></li>
+                <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
               <% else %>
-                <li><%= link_to "Log In", new_admin_session_path %></li>
+                <li><%= link_to "Log In", new_user_session_path %></li>
               <% end %>
           </ul>
     </div><!-- /.navbar-collapse -->

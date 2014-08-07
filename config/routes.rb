@@ -4,8 +4,29 @@ Rails.application.routes.draw do
   devise_for :users
   resources :posts
 
-  #devise_for :installs
-  root 'posts#index'
+  # devise_for :installs
+  root "posts#index"
+  get "about" => "pages#about" # creates about_path
+
+    get "services" => "pages#services"
+    get "goldsmith" => "pages#goldsmith"
+    get "mission" => "pages#mission"
+
+  get "products" => "pages#products" # creates services_path
+
+    get "jewelry" => "pages#jewelry"
+    get "necklaces" => "pages#necklaces"
+    get "earrings" => "pages#earrings"
+    get "rings" => "pages#rings"
+    get "blackpearls" => "pages#blackpearls"
+    get "children" => "pages#children"
+    get "bridal" => "pages#bridal"
+    get "christmas" => "pages#christmas"
+
+    get "show" => "pages#show"
+
+  get 'contact' => 'contact#new'
+  post 'contact' => 'contact#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
