@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  
+  resources :users
   get "users/show"
   devise_for :users
+  
   resources :posts
 
   # devise_for :installs
