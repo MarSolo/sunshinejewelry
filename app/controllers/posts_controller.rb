@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :correct_user , only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
 =begin
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   	@post = current_user.posts.build(post_params)
    
       if @post.save
-      	redirect_to @post
+      	redirect_to @post, notice: 'Post was successfully created.'
       else
       	render 'new'
     end
