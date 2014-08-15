@@ -1,69 +1,58 @@
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<div class="container-fluid">
 
-<br>
-<div class="container">
-  <div id="carousel" class="carousel slide" data-ride="carousel">
+  <div id="carousel" class="carousel slide">
   <!-- Indicators -->
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
 
-    <div class="item active">
-      <p align="center">
-        <img src="images/Flower-Earring-1000x320.jpg" alt="carousel">
-      </p>
+      <div class="item active">
+       <br>
+        <p align="center">
+          <a href="//www.bhpictures.com/roadworkahead">
+            <img src="images/RWA_Poster_image_resize.jpg" alt="carousel">
+          </a>
+        </p>
+      </div>
+
+      <div class="item">
+        <br>
+        <br>
+        <p align="center">
+          <iframe src="//player.vimeo.com/video/66759737" width="500" height="285" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </p>
+      </div>
+
     </div>
 
-    <div class="item">
-      <p align="center">
-        <img src="images/Tricolor-Fancy-Necklace-1000x320.jpg" alt="carousel">
-      </p>
-    </div>
-
-    <div class="item">
-      <p align="center">
-        <img src="images/Buterflies-Ring-1000x320.jpg" alt="carousel">
-      </p>
-    </div>
-
-    <div class="item">
-      <p align="center">
-        <img src="images/Twist-Earrings1-1000x320.jpg" alt="carousel">
-      </p>
-    </div>
-
-    <div class="item">
-      <p align="center">
-        <img src="images/gift-bag-2-1000x320.jpg" alt="carousel">
-      </p>
-    </div>
-
-    <div class="item">
-      <p align="center">
-        <img src="images/leaf-earring-one-1000x320.jpg" alt="carousel">
-      </p>
-    </div>
-
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
   </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-</div>
                           
   <div class="row">
     <div class="col-md-8">
+    <h1>News</h1>
+
+          <!--Login Controls-->
+            <div class="login">
+              <ul class="nav navbar-nav navbar-justified">
+              <% if user_signed_in? %>
+                <li>
+                  <%= link_to new_post_path do %>
+                    <span class="glyphicon glyphicon-plus"></span>New Post<% end %>
+                </li>
+                    <li><%= link_to "Account", edit_user_registration_path %></li>
+                    <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+                  <% else %>
+                    <li><%= link_to "Log In", new_user_session_path %></li>
+                  <% end %>
+              </ul>
+            </div>
 
           <div id="posts" class="transitions-enabled">
             <% @posts.each do |post| %>
@@ -75,7 +64,7 @@
                     <%= post.created_at.strftime("%b %d, %Y") %></h5>
                     <div class="actions">
                         
-                        <%= simple_format post.text %>
+                        <%= link_to post do %>Continue<% end %>
                         <% if current_user && post.user == current_user %>
                         <%= link_to edit_post_path(post) do %>
                             Edit
@@ -95,29 +84,10 @@
 
     <div class="col-md-4">
 
-      <div id="posts" class="transitions-enabled">
-        <div class="box panel panel-default">
-          <div class="panel-body">
-              <li>Philadelphia local jewelry store located next to the Italian Market.</li>
-                <br>
-              <li><strong>Address:</strong></li> 
-              <li>702 Washington Avenue</li>
-              <li>Philadelphia, PA 19147</li>
-                <br>
-              <li><strong>Phone Number:</strong></li> 
-              <li>215-271-2950</li>
-                <br>
-              <li><strong>Hours:</strong></li>
-              <li>10am – 7pm</li>
-              <li>Closed on Tuesday</li>
-              <h3 align="center">“MAKING EVERY MOMENT ONE OF A KIND”</h3>
-          </div>
-        </div>
-      </div>
-
       <br>
       
-        <div class="fb-like-box" data-href="http://www.facebook.com/pages/Sunshine-Jewelry/121478197895379" width="290px" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+        <a class="twitter-timeline" href="https://twitter.com/BH_Pictures" data-widget-id="421485262435127296">Tweets by @BH_Pictures</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
     </div>
     

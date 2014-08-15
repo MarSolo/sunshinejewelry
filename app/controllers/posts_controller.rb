@@ -17,16 +17,16 @@ class PostsController < ApplicationController
 
 
   def new
-    @post = current_user.posts.build
+  	@post = current_user.posts.build
   end
    
   def create
-    @post = current_user.posts.build(post_params)
+  	@post = current_user.posts.build(post_params)
    
       if @post.save
-        redirect_to @post
+      	redirect_to @post
       else
-        render 'new'
+      	render 'new'
     end
   end
 
@@ -56,12 +56,12 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
       end
 
-      def post_params
-        params.require(:post).permit(:image, :title, :text)
-      end
+  	  def post_params
+  	    params.require(:post).permit(:image, :title, :text)
+  	  end
 
       def correct_user
         @post = current_user.posts.find_by(id: params[:id])
         redirect_to posts_path, notice: "Not authorized to edit this post" if @post.nil?
       end
-  end
+end

@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
   devise_for :installs
+  devise_for :users
   resources :users
   get "users/show"
   
-  resources :posts
-
   # devise_for :installs
   root "posts#index"
   get "about" => "pages#about" # creates about_path
