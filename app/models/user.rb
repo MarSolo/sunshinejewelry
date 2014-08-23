@@ -8,6 +8,6 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
 
-  validates_format_of :email, :with => /sunshsinejewelry\.com/, 
-  :message => "- That's not a BoatHouse Pictures email address."
+  validates_format_of :email, :with => /sunshinejewelry\.com/, 
+  :message => "- That's not a Sunshine Jewelry email address."
 end
