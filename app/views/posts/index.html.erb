@@ -9,6 +9,7 @@
 
 <br>
 <div class="container">
+
   <div id="carousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
 
@@ -80,6 +81,7 @@
                         <%= link_to edit_post_path(post) do %>
                             Edit
                         <% end %>
+                        <br>
                         <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do %>
                             Delete
                         <% end %>
