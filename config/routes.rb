@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :installs
   devise_for :users
   resources :posts
+
   get "users/show"
   
   # devise_for :installs
@@ -12,21 +13,9 @@ Rails.application.routes.draw do
     get "goldsmith" => "pages#goldsmith"
     get "mission" => "pages#mission"
 
-  get "products" => "pages#products" # creates services_path
+  get "products" => "pages#products" # creates products_path
 
-    get "jewelry" => "pages#jewelry"
-    get "necklaces" => "pages#necklaces"
-    get "earrings" => "pages#earrings"
-    get "rings" => "pages#rings"
-    get "blackpearls" => "pages#blackpearls"
-    get "children" => "pages#children"
-    get "bridal" => "pages#bridal"
-    get "christmas" => "pages#christmas"
-
-    get "show" => "pages#show"
-
-  get 'contact' => 'contact#new'
-  post 'contact' => 'contact#create'
+  get 'contact' => 'pages#contact'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
