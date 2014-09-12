@@ -9,11 +9,19 @@ Rails.application.routes.draw do
   root "posts#index"
   get "about" => "pages#about" # creates about_path
 
+    get "mission" => "pages#mission"
     get "services" => "pages#services"
     get "goldsmith" => "pages#goldsmith"
-    get "mission" => "pages#mission"
+    get "awards" => "pages#awards"
 
   get "products" => "pages#products" # creates products_path
+
+    get "rings" => "pages#rings"
+    get "fashion" => "pages#fashion"
+    get "pearls" => "pages#pearls"
+    get "gold" => "pages#gold"
+    get "childs" => "pages#childs" 
+    get "custom" => "pages#custom"
 
   get 'contact' => 'pages#contact'
 

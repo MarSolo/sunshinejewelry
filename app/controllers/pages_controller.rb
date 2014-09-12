@@ -3,19 +3,22 @@ class PagesController < ApplicationController
   end
   
   def about
+      def mission
+      end
+
       def services
       end
 
       def goldsmith
       end
 
-      def mission
+      def awards
       end
   end
 
-  def products
+  def childs
   end
-
+  
   def contact
   end
 

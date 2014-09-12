@@ -10,9 +10,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-    <a class="navbar-brand" href="/">
-      SUNSHINE JEWELRY
-    </a>
+    <%= link_to image_tag("sunshine_logo.jpg", :alt => "sunshine"), 
+            root_path %>
     </div>
 
      <!-- Collect the nav links, forms, and other content for toggling -->
@@ -21,12 +20,23 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">ABOUT US <b class="caret"></b></a>
           <ul class="dropdown-menu">
+            <li><%= link_to "Our Mission", mission_path %></li>
             <li><%= link_to "Our Services", services_path %></li>
             <li><%= link_to "Our Goldsmith", goldsmith_path %></li>
-            <li><%= link_to "Our Mission", mission_path %></li>
+            <li><%= link_to "Our Awards", awards_path %></li>
           </ul>
         </li>
-        <li><%= link_to "PRODUCTS", products_path %></li>
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">PRODUCTS <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Wedding Rings/Bands", rings_path %></li>
+            <li><%= link_to "Fashion Jewelry", fashion_path %></li>
+            <li><%= link_to "Pearls", pearls_path %></li>
+            <li><%= link_to "Gold", gold_path %></li>
+            <li><%= link_to "Children's Jewelry", childs_path %></li>
+            <li><%= link_to "Yan Djap's Custom Designs", custom_path %></li>
+          </ul>
+        </li>
         <li><%= link_to "CONTACT", contact_path %></li>
       </ul>
 

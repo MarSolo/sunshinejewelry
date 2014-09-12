@@ -1,14 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
 
-
 $body-bg:                    #ecf0f1; 
 $font-family-sans-serif:     'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $navbar-height:              45px;
-$navbar-default-bg:          #6a0a3f;
-$navbar-default-brand-color: white;
-$navbar-default-link-color:  white;
-$brand-primary:              #6a0a3f;
+$navbar-default-bg:          #ecf0f1;
+$navbar-default-brand-color: #6a0a3f;
+$navbar-default-link-color:  #cc0033;
+$brand-primary:              #cc0033;
 $jumbotron-bg:               white;
 
 @import 'bootstrap';
@@ -111,17 +110,10 @@ ul, li {
 
 .navbar {
 	margin: 0 auto;
-	border: none;
-	background: #6a0a3f;
-}
-
-.navbar-brand {
-    font-weight: bold;
-    color: white;
+	background: white;
 }
 
 .navbar li {
-	margin: 0 auto;
     font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 14px;
 }
@@ -140,3 +132,25 @@ ul, li {
 .checkbox {
 	padding-left: 40px;
 }
+
+.error {
+    display: none; /* hide the errors */
+    /* add some styling */
+    padding:10px;
+    color: #D8000C;
+    font-size:12px;
+    background-color: #FFBABA;
+}
+.success {
+    display: none; /* hide the sucess div */
+    /* add some styling */
+    padding:10px;
+    color: #044406;
+    font-size:12px;
+    background-color: #B7FBB9;
+}
+
+.error img { 
+	vertical-align: top; 
+}
+

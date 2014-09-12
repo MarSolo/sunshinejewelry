@@ -7,10 +7,9 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<br>
 <div class="container">
 
-  <div id="carousel" class="carousel slide" data-ride="carousel">
+<div id="carousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
 
   <!-- Wrapper for slides -->
@@ -73,7 +72,43 @@
         <div class="panel-body">
         <p>Thank you for visiting Sunshine Jewelry! To the right you can find our contact info as well as a link to our Facebook page. Like our page and get constant updates!</p>
 
-        <p>For more information you can e-mail us at <a href="mailto:info@sunshinejewelryonline.com">info@sunshinejewelryonline.com</a>.</p>
+        <p>For more information you can e-mail us at <a href="mailto:info@sunshinejewelryonline.com">info@sunshinejewelryonline.com</a> or use the form below.</p>
+
+        <form action='contact.php' method='post' id='contact_form'>
+            
+            <p>
+            Name:
+            <div id='name_error' class='error'><img src='images/error.png'> Please provide your name.</div>
+            <div><input type='text' name='name' id='name'></div>
+            </p>
+            
+            <p>
+            Email:
+            <div id='email_error' class='error'><img src='images/error.png'> Please provide an e-mail address.</div>
+            <div><input type='text' name='email' id='email'>
+            </p>
+            
+            <p>
+            Subject:
+            <div id='subject_error' class='error'><img src='images/error.png'> What is the purpose of the contact?</div>
+            <div><input type='text' name='subject' id='subject'></div>
+            </p>
+            
+            <p>
+            Message:
+            <div id='message_error' class='error'><img src='images/error.png'> Please leave a brief message.</div>
+            <div><textarea name='message' id='message'></textarea></div>
+            </p>
+            
+            <div id='mail_success' class='success'><img src='images/success.png'> Thank you for your message.</div>
+            <div id='mail_fail' class='error'><img src='images/error.png'> Sorry, please try again later.</div>
+            <p id='cf_submit_p'>
+            <input type='submit' id='send_message' value='Send Message'>
+            </p>
+            
+        </form>
+
+
         </div>
         </div>
         </div>
@@ -93,9 +128,11 @@
               <li><strong>Phone Number:</strong></li> 
               <li>215-271-2950</li>
                 <br>
+              <li><strong>Fax Number:</strong></li>
+              <li>215-271- 2962</li>
+                <br>
               <li><strong>Hours:</strong></li>
-              <li>10am – 7pm</li>
-              <li>Closed on Tuesday</li>
+              <li>Open 7 days a week from 10am – 6:30pm</li>
               <h3 align="center">“MAKING EVERY MOMENT ONE OF A KIND”</h3>
           </div>
         </div>
