@@ -21,6 +21,8 @@ gem 'rename'
 gem 'tinymce-rails'
 gem "rmagick", "~> 2.13.1", :require => 'RMagick'
 gem 'carrierwave'
+gem 'mail_form'
+gem 'simple_form'
 
 group :development, :test do
      gem 'sqlite3'

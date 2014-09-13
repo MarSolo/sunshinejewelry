@@ -133,24 +133,35 @@ ul, li {
 	padding-left: 40px;
 }
 
-.error {
-    display: none; /* hide the errors */
-    /* add some styling */
-    padding:10px;
-    color: #D8000C;
-    font-size:12px;
-    background-color: #FFBABA;
-}
-.success {
-    display: none; /* hide the sucess div */
-    /* add some styling */
-    padding:10px;
-    color: #044406;
-    font-size:12px;
-    background-color: #B7FBB9;
+.hidden { display: none; }
+
+/*flash*/
+
+.alert-error {
+background-color: #f2dede;
+border-color: #eed3d7;
+color: #b94a48;
+text-align: left;
 }
 
-.error img { 
-	vertical-align: top; 
+.alert-alert {
+background-color: #f2dede;
+border-color: #eed3d7;
+color: #b94a48;
+text-align: left;
+}
+
+.alert-success {
+background-color: #dff0d8;
+border-color: #d6e9c6;
+color: #468847;
+text-align: left;
+}
+
+.alert-notice {
+background-color: #dff0d8;
+border-color: #d6e9c6;
+color: #468847;
+text-align: left;
 }
 
