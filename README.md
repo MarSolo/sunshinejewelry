@@ -1,4 +1,0 @@
-sunshinejewelry
-===============
-
-Sunshine Jewelry

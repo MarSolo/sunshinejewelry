@@ -12,16 +12,13 @@ gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
 gem 'devise', '~> 3.1.1'  
-gem "paperclip", "~> 4.1"
+gem "paperclip", '~> 4.1'
 gem 'aws-sdk', '~> 1.20.0'
 gem 'masonry-rails', '~> 0.2.0'	
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem 'rename'
 gem 'tinymce-rails'
-gem "rmagick", "~> 2.13.1", :require => 'RMagick'
-gem 'carrierwave'
-gem 'mail_form'
 gem 'simple_form'
 
 group :development, :test do
