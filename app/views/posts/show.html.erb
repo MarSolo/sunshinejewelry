@@ -1,17 +1,12 @@
-<div class="container-fluid">
+<div class="container">
 
 <div class="row">
+  
   <div class="col-md-8">
-    
-    <h1><%= @post.title %></h1>
+      <h1><%= @post.title %></h1>
       <div class="panel panel-default">
-          <div class="panel-heading center">
-    	   <%= image_tag @post.image.url (:medium) %>
-    	    </div>
-    	        <div class="panel-body">
-    		        <h5>Posted by <strong><%= @post.user.name if @post.user %></strong> on 
-                    <%= @post.created_at.strftime("%b %d, %Y") %></h5>
-                    <br>
+    	     <div class="panel-body">
+    		        <h5>Posted by <strong><%= @post.user.name if @post.user %></strong> on <%= @post.created_at.strftime("%b %d, %Y") %></h5>
     	        	<%= simple_format @post.text %>
 
         			<% if current_user && @post.user == current_user %>
@@ -23,14 +18,12 @@
                 		<%= link_to posts_path do %>
                 		Back
                 		<% end %>
-
-    	         </div>
+    	     </div>
 	    </div>
-
   </div>
 
-    <div class="col-md-4">
-        <h1>Other News</h1>
+  <div class="col-md-4">
+        <h1>Recent Posts:</h1>
 
           <div id="posts" class="transitions-enabled">
             <% @posts.each do |post| %>
@@ -40,7 +33,6 @@
                     <%= link_to post do %><h2><%= post.title %></h2><% end %>
                     <h5>Posted by <strong><%= post.user.name if post.user %></strong> on 
                     <%= post.created_at.strftime("%b %d, %Y") %></h5>
-                    <!-- <p><%= link_to image_tag(post.image.url(:medium)), post %><p> -->
                     <%= link_to post do %><h6>Read More</h6><% end %>
 
                     <% if current_user && @post.user == current_user %>
@@ -54,13 +46,12 @@
                         <% end %>
 
                     <% end %>
-
+                  </div>     
                   </div>
-                </div>
               </div>
             <% end %>
           </div>
     </div>
-
 </div>
+
 </div>

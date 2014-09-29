@@ -15,39 +15,27 @@
   <div class="carousel-inner">
 
     <div class="item active">
-      <p align="center">
         <img src="images/Flower-Earring-1000x320.jpg" alt="carousel">
-      </p>
     </div>
 
     <div class="item">
-      <p align="center">
         <img src="images/Diamond all around Necklace_alt.jpg" alt="carousel">
-      </p>
     </div>
 
     <div class="item">
-      <p align="center">
         <img src="images/Buterflies-Ring-1000x320.jpg" alt="carousel">
-      </p>
     </div>
 
     <div class="item">
-      <p align="center">
         <img src="images/Twist-Earrings1-1000x320.jpg" alt="carousel">
-      </p>
     </div>
 
     <div class="item">
-      <p align="center">
         <img src="images/gift-bag-2-1000x320.jpg" alt="carousel">
-      </p>
     </div>
 
     <div class="item">
-      <p align="center">
         <img src="images/leaf-earring-one-1000x320.jpg" alt="carousel">
-      </p>
     </div>
 
   </div>
@@ -67,9 +55,6 @@
           <div id="posts" class="transitions-enabled">
             <% @posts.each do |post| %>
               <div class="box panel panel-default">
-                <div class="panel panel center">
-                <%= link_to image_tag(post.image.url(:medium)), post %>
-                </div>
                 <div class="panel-body">
                     <%= link_to post do %><h2><%= post.title %></h2><% end %>
                     <h5>Posted by <strong><%= post.user.name if post.user %></strong> on 

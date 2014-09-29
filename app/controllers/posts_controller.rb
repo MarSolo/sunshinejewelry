@@ -15,7 +15,6 @@ class PostsController < ApplicationController
     @posts = Post.all.order("created_at DESC").paginate(:page => params[:page])
   end
 
-
   def new
   	@post = current_user.posts.build
   end

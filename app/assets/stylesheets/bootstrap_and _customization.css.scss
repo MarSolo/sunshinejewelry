@@ -22,6 +22,7 @@ h1 {
 
 h2 {
 	font-size: 20px;
+	color: #cc0033;
 }
 
 h3 {
@@ -39,26 +40,13 @@ h5 {
 	font-size: 12px;
 }
 
-.container {
-	width: 90%;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover; 
-
-	-webkit-border-radius: 10px;
-  	-moz-border-radius: 10px;
-  	-ms-border-radius: 10px;
-  	border-radius: 10px;
-}
-
 ul, li {
     list-style-type: none;
     margin: 0 auto;
 }
 
 .carousel {
-	margin: 0 auto;
+	width: 100%;
 }
 
 .carousel h1{

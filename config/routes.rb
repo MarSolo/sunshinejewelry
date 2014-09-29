@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pins
+
   devise_for :installs
   devise_for :users
   resources :posts
@@ -14,6 +16,7 @@ Rails.application.routes.draw do
     get "goldsmith" => "pages#goldsmith"
     get "awards" => "pages#awards"
 
+  get "gallery" => "pages#pins"
   get "products" => "pages#products" # creates products_path
 
     get "rings" => "pages#rings"

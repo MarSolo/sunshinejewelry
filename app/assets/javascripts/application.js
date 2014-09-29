@@ -18,5 +18,6 @@
 //= require masonry/jquery.masonry
 //= require_tree .
 //= require tinymce
+//= require jquery_nested_form
 
 

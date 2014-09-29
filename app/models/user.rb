@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :posts, dependent: :destroy
 
+  has_many :pins
+
   validates :name, presence: true
 
   validates_format_of :email, :with => /sunshinejewelryonline\.com/, 
