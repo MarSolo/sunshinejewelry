@@ -42,7 +42,6 @@ h5 {
 
 ul, li {
     list-style-type: none;
-    margin: 0 auto;
 }
 
 .carousel {
@@ -107,6 +106,10 @@ ul, li {
 
 .gallery {
 	margin: 30px;
+}
+
+.gallery a {
+    margin: 0 auto;
 }
 
 .checkbox {
