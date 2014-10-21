@@ -4,11 +4,62 @@ class PinsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
  def index
-   @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 8)
+   if params[:tag]
+      @pins = Pin.tagged_with(params[:tag])
+    else
+      @pins = Pin.all.order("created_at DESC")
+    end
  end
 
+ def rings
+   if params[:tags]
+      @pins = Pin.tagged_with("rings", :any => true )
+    else
+      @pins = Pin.tagged_with("rings", :any => true ).order("created_at DESC")
+    end
+ end
+
+  def fashion
+   if params[:tags]
+      @pins = Pin.tagged_with("Jewelry", :any => true )
+    else
+      @pins = Pin.tagged_with("Jewelry", :any => true ).order("created_at DESC")
+    end
+  end
+
+  def pearls
+   if params[:tags]
+      @pins = Pin.tagged_with("pearls", :any => true )
+    else
+      @pins = Pin.tagged_with("pearls", :any => true ).order("created_at DESC")
+    end
+  end
+
+  def gold
+   if params[:tags]
+      @pins = Pin.tagged_with("gold", :any => true )
+    else
+      @pins = Pin.tagged_with("gold", :any => true ).order("created_at DESC")
+    end
+  end
+
+  def childs
+   if params[:tags]
+      @pins = Pin.tagged_with("Children's Jewelry", :any => true )
+    else
+      @pins = Pin.tagged_with("Children's Jewelry", :any => true ).order("created_at DESC")
+    end
+  end
+
+  def custom
+   if params[:tags]
+      @pins = Pin.tagged_with("Yan Djap's Custom", :any => true )
+    else
+      @pins = Pin.tagged_with("Yan Djap's Custom", :any => true ).order("created_at DESC")
+    end
+  end
+
   def show
-    @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page])
   end
 
   def new
@@ -40,6 +91,14 @@ class PinsController < ApplicationController
     redirect_to pins_url
   end
 
+  def tagged
+    if params[:tag].present? 
+      @pins = Pin.tagged_with(params[:tag])
+    else 
+      @pins = Pin.postall
+    end  
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pin
@@ -53,6 +112,6 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:description, :image)
+      params.require(:pin).permit(:description, :image, :tag_list)
     end
 end

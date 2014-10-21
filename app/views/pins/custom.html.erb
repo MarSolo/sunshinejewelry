@@ -1,0 +1,104 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="container">
+
+<div id="carousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+
+    <div class="item active">
+        <img src="images/Flower-Earring-1000x320.jpg" alt="carousel">
+    </div>
+
+    <div class="item">
+        <img src="images/Tricolor-Fancy-Necklace-1000x320.jpg" alt="carousel">
+    </div>
+
+    <div class="item">
+        <img src="images/Buterflies-Ring-1000x320.jpg" alt="carousel">
+    </div>
+
+    <div class="item">
+        <img src="images/Twist-Earrings1-1000x320.jpg" alt="carousel">
+    </div>
+
+    <div class="item">
+        <img src="images/gift-bag-2-1000x320.jpg" alt="carousel">
+    </div>
+
+    <div class="item">
+        <img src="images/leaf-earring-one-1000x320.jpg" alt="carousel">
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
+        <br>
+        <br>
+
+        <h1>Yan Djap's Custom Designs</h1>
+
+          <div id="posts" class="transitions-enabled">
+            <div class="box panel panel-default">
+              <div class="panel-body">
+                <div class="gallery">
+                <p>These are the custom designs of our jeweler, Yan Djap!</p>  
+
+                <a href="images/custom/24k-ring-body-view-1024x946.jpg" data-lightbox="custom">
+                <img src="images/custom/24k-ring-body-view-1024x946.jpg" width="25%"></a>
+
+                <a href="images/custom/24k-ring-full-view-1024x995.jpg" data-lightbox="custom">
+                <img src="images/custom/24k-ring-full-view-1024x995.jpg" width="25%"></a>
+
+                <a href="images/custom/YD-Ring.jpg" data-lightbox="custom">
+                <img src="images/custom/YD-Ring.jpg" width="25%"></a>
+                </div>
+
+          <div id="pins" class="transitions-enabled">
+            <% @pins.each do |pin| %>
+              <div class="box_pin panel panel-default">
+                <%= link_to image_tag(pin.image.url(:medium)), pin %>
+                <div class="panel-body">
+                  <%= pin.description %>
+                  <br>
+                  <p><%= raw pin.tag_list.map { |t| link_to t, tag_path(t) }.join(',  ') %></p>
+                  <h5>posted by: <strong><%= pin.user.name if pin.user %></strong></h5>
+                  <br/>
+                  <% if pin.user == current_user %>
+                    <div class="actions">
+                      <%= link_to edit_pin_path(pin) do %>
+                        Edit
+                      <% end %>
+                      <br>  
+                      <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                        Delete
+                      <% end %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+                </div>
+            </div>
+          </div>
+
+</div>

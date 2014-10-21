@@ -24,6 +24,7 @@ gem 'carrierwave'
 gem 'mail_form'
 gem 'simple_form'
 gem 'nested_form'
+gem 'acts-as-taggable-on', '~> 3.4'
 
 group :development, :test do
      gem 'sqlite3'

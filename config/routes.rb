@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+
+  get 'tags/:tag', to: 'pins#index', as: :tag
+
   resources :pins
 
   devise_for :installs
   devise_for :users
+  
   resources :posts
 
   get "users/show"
@@ -19,14 +23,16 @@ Rails.application.routes.draw do
   get "gallery" => "pages#pins"
   get "products" => "pages#products" # creates products_path
 
-    get "rings" => "pages#rings"
-    get "fashion" => "pages#fashion"
-    get "pearls" => "pages#pearls"
-    get "gold" => "pages#gold"
-    get "childs" => "pages#childs" 
-    get "custom" => "pages#custom"
+    get "rings" => "pins#rings"
+    get "fashion" => "pins#fashion"
+    get "pearls" => "pins#pearls"
+    get "gold" => "pins#gold"
+    get "childs" => "pins#childs" 
+    get "custom" => "pins#custom"
 
     get "contact" => "pages#contact"
+
+    get "tags" => "pages#tags"
 
   # match '/contacts',     to: 'contacts#new',             via: 'get'
   # resources "contacts", only: [:new, :create]

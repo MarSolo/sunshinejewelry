@@ -16,10 +16,25 @@ class PagesController < ApplicationController
       end
   end
 
+  def rings
+  end
+
+  def pearls
+  end
+
+  def gold 
+  end
+
   def childs
+  end
+
+  def custom
   end
   
   def contact
+  end
+
+  def tags
   end
 
 end
