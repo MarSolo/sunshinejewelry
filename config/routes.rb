@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   root "posts#index"
   get "about" => "pages#about" # creates about_path
 
-    get "mission" => "pages#mission"
+    get "mission" => "pages#mission" 
     get "services" => "pages#services"
     get "goldsmith" => "pages#goldsmith"
     get "awards" => "pages#awards"
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
     get "contact" => "pages#contact"
 
-    get "tags" => "pages#tags"
+    
 
   # match '/contacts',     to: 'contacts#new',             via: 'get'
   # resources "contacts", only: [:new, :create]
