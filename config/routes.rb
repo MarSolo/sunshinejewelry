@@ -31,9 +31,7 @@ Rails.application.routes.draw do
     get "custom" => "pins#custom"
 
     get "contact" => "pages#contact"
-
     
-
   # match '/contacts',     to: 'contacts#new',             via: 'get'
   # resources "contacts", only: [:new, :create]
 
