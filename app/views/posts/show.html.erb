@@ -5,6 +5,9 @@
   <div class="col-md-8">
       <h1><%= @post.title %></h1>
       <div class="panel panel-default">
+        <div class="panel-heading center">
+         <%= image_tag @post.image.url (:medium) %>
+        </div>
     	     <div class="panel-body">
     		        <h5>Posted by <strong><%= @post.user.name if @post.user %></strong> on <%= @post.created_at.strftime("%b %d, %Y") %></h5>
     	        	<%= simple_format @post.text %>

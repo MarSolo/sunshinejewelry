@@ -55,6 +55,9 @@
           <div id="posts" class="transitions-enabled">
             <% @posts.each do |post| %>
               <div class="box panel panel-default">
+                <div class="panel-heading center">
+                <%= link_to image_tag(post.image.url(:medium)), post %>
+                </div>
                 <div class="panel-body">
                     <%= link_to post do %><h2><%= post.title %></h2><% end %>
                     <h5>Posted by <strong><%= post.user.name if post.user %></strong> on 
