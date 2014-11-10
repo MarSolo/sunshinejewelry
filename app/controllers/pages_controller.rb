@@ -19,6 +19,9 @@ class PagesController < ApplicationController
   def rings
   end
 
+  def frings
+  end
+
   def pearls
   end
 

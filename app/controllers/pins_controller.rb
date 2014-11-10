@@ -2,7 +2,7 @@ class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: 
-  [:index, :show, :rings, :fashion, :pearls, :gold, :childs, :custom]
+  [:index, :show, :rings, :frings, :fashion, :pearls, :gold, :childs, :custom]
 
  def index
    if params[:tag]
@@ -17,6 +17,14 @@ class PinsController < ApplicationController
       @pins = Pin.tagged_with("rings", :any => true )
     else
       @pins = Pin.tagged_with("rings", :any => true ).order("created_at DESC")
+    end
+ end
+
+ def frings
+   if params[:tags]
+      @pins = Pin.tagged_with("frings", :any => true )
+    else
+      @pins = Pin.tagged_with("frings", :any => true ).order("created_at DESC")
     end
  end
 

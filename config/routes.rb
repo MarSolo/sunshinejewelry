@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get "products" => "pages#products" # creates products_path
 
     get "rings" => "pins#rings"
+    get "frings" => "pins#frings"
     get "fashion" => "pins#fashion"
     get "pearls" => "pins#pearls"
     get "gold" => "pins#gold"
