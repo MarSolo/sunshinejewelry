@@ -3,11 +3,10 @@ Rails.application.routes.draw do
   get 'tags/:tag', to: 'pins#index', as: :tag
 
   resources :pins
+  resources :posts
 
   devise_for :installs
   devise_for :users
-  
-  resources :posts
 
   get "users/show"
   
