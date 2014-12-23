@@ -25,9 +25,11 @@ gem 'mail_form'
 gem 'simple_form'
 gem 'nested_form'
 gem 'acts-as-taggable-on', '~> 3.4'
+gem 'passenger', '~> 4.0.53'
 
 group :development, :test do
-     gem 'sqlite3'
+	 gem 'sqlite3'
+     gem 'capistrano'
 end
 
 group :production do

@@ -1,0 +1,2 @@
+RewriteCond %{HTTP_HOST} ^sunshinejewerly.herokuapp.com
+RewriteRule ^(.*) http://shunshinejewelryonline.com/$1 [P]

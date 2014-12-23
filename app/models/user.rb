@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :posts, dependent: :destroy
 
-  has_many :pins
+  has_many :pins, dependent: :destroy
 
   validates :name, presence: true
 

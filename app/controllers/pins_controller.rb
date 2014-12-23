@@ -22,9 +22,9 @@ class PinsController < ApplicationController
 
  def frings
    if params[:tags]
-      @pins = Pin.tagged_with("frings", :any => true )
+      @pins = Pin.tagged_with("Fashion Rings", :any => true )
     else
-      @pins = Pin.tagged_with("frings", :any => true ).order("created_at DESC")
+      @pins = Pin.tagged_with("Fashion Rings", :any => true ).order("created_at DESC")
     end
  end
 
